@@ -7,11 +7,13 @@ import { useEffect, useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 const postURL = "https://lagarto6.ing.puc.cl/ordenes-compra/?id=skdfhskdjcamsk21234"
+const patchURL = "https://lagarto6.ing.puc.cl/ordenes-compra/skdfhskdjcamsk21234"
 
 export default function Home() {
 
   // Declare the states variables
   const [data, setData] = useState(null)
+  const [data2, setData2] = useState(null)
 
   // Make POST request to API with axios
   function handleGetClick() {
@@ -35,14 +37,33 @@ export default function Home() {
     }
   }
 
+  // PATCH request
+  function handlePatchClick() {
+    try {
+      console.log("Patch to server")
+      let body = {
+        "estado": "rechazado",
+      }
+      axios.patch(postURL, body)
+      .then((response) => {
+        console.log(response)
+        setData2(response.data)
+      })
 
+    } catch (err) {
+      console.error(err)
+    }
+  }
 
   return (
-    <div className='container text-center m-3 p-3'>
+    <div className="container text-center my-3 p-3 bg-white shadow rounded">
       <h1> Recorreccion E1 </h1>
 
-      {/* Deployar resultados */}
-      <button className='btn btn-dark' onClick={handleGetClick}> Get </button>
+      {/* Btns to make requests */}
+      <div className="d-flex flex-row justify-content-center gap-2 my-2">
+        <button className='btn btn-dark' onClick={handleGetClick}> Post </button>
+        <button className='btn btn-dark' onClick={handlePatchClick}> Patch </button>
+      </div>
     </div>
   )
 }
