@@ -6,7 +6,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
-const postURL = "http://lagarto6.ing.puc.cl/ordenes-compra/?id=skdfhskdjcamsk21234"
+const postURL = "https://lagarto6.ing.puc.cl/ordenes-compra/?id=skdfhskdjcamsk21234"
 
 export default function Home() {
 
