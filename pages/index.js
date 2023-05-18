@@ -14,8 +14,9 @@ export default function Home() {
   const [data, setData] = useState(null)
 
   // Make GET request to API with axios
-  const handleGetClick = async () => {
+  async function handleGetClick() {
     try {
+      console.log("Post to server")
       let body = {
         "cliente": "lucasvsj",
         "sku" : 932845791283,
