@@ -44,7 +44,7 @@ export default function Home() {
       let body = {
         "estado": "rechazado",
       }
-      axios.patch(postURL, body)
+      axios.patch(patchURL, body)
       .then((response) => {
         console.log(response)
         setData2(response.data)
