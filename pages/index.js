@@ -42,7 +42,7 @@ export default function Home() {
       <h1> Recorreccion E1 </h1>
 
       {/* Deployar resultados */}
-      <button className='btn btn-dark' onClick={() => handleGetClick}> Get </button>
+      <button className='btn btn-dark' onClick={handleGetClick}> Get </button>
     </div>
   )
 }
