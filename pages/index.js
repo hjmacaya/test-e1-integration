@@ -13,8 +13,8 @@ export default function Home() {
   // Declare the states variables
   const [data, setData] = useState(null)
 
-  // Make GET request to API with axios
-  async function handleGetClick() {
+  // Make POST request to API with axios
+  function handleGetClick() {
     try {
       console.log("Post to server")
       let body = {
@@ -24,12 +24,18 @@ export default function Home() {
         "cantidad" : 12,
         "urlNotificacion" : "www.example.com"
       }
-      const response = await axios.post(postURL, body)
-      console.log(response)
+      axios.post(postURL, body)
+      .then((response) => {
+        console.log(response)
+        setData(response.data)
+      })
+
     } catch (err) {
       console.error(err)
     }
   }
+
+
 
   return (
     <div className='container text-center m-3 p-3'>
