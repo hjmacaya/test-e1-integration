@@ -25,7 +25,7 @@ export default function Home() {
         "urlNotificacion" : "www.example.com"
       }
       const response = await axios.post(postURL, body)
-      console.log(repsonse)
+      console.log(response)
     } catch (err) {
       console.error(err)
     }
