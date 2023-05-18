@@ -15,7 +15,6 @@ export default function Home() {
 
   // Make GET request to API with axios
   const handleGetClick = async () => {
-
     try {
       let body = {
         "cliente": "lucasvsj",
@@ -36,7 +35,7 @@ export default function Home() {
       <h1> Recorreccion E1 </h1>
 
       {/* Deployar resultados */}
-      <button className='btn btn-dark'> Get </button>
+      <button className='btn btn-dark' onClick={() => handleGetClick}> Get </button>
     </div>
   )
 }
