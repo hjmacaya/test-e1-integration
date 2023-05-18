@@ -22,7 +22,7 @@ export default function Home() {
         "sku" : 932845791283,
         "fechaEntrega" : "2023-12-12",
         "cantidad" : 12,
-        "urlNotificacion" : "www.example.com"
+        "urlNotificacion" : "https://www.example.com/"
       }
       axios.post(postURL, body)
       .then((response) => {
